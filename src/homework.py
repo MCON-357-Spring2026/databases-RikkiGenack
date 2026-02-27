@@ -66,7 +66,16 @@ def create_schema(conn: sqlite3.Connection) -> None:
       - score (required, >= 0)
       - UNIQUE(student_id, assignment_id) to prevent duplicates
     """
-    raise NotImplementedError
+    schema = """"""
+    DROP TABLE IF EXISTS grades;
+    DROP TABLE IF EXISTS assignments;
+    DROP TABLE IF EXISTS students;
+
+    CREATE TABLE students (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE
+    );
 
 
 # ---------------------------
